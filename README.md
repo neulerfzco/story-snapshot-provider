@@ -26,21 +26,22 @@ make file-server
 ```yaml
 #execution config
 geth_rpc_url: "http://localhost:8545"
-geth_client_name: "<execution_name>"
+geth_client_name: "geth"
 geth_service_name: "geth.service"
-geth_data_dir: "/path/to/geth/chaindata"
+geth_data_dir: "/home/ubuntu/.story/geth/iliad/geth/chaindata"
 #consensus config
 cosmos_rpc_url: "http://localhost:26657/status"
-cosmos_client_name: "<cosmos_name>"
-cosmos_service_name: "<cosmos_bin>.service"
-cosmos_data_dir: "/path/to/cosmos/data"
+cosmos_client_name: "story"
+cosmos_service_name: "story.service"
+cosmos_data_dir: "/home/ubuntu/.story/story/data"
 #snapshot config
 geth_snapshot_type: "pruned"
-cosmos_snapshot_type: "archive"
-snapshot_dir: "/path/to/public/snapshots"
+cosmos_snapshot_type: "pruned"
+snapshot_dir: "/home/ubuntu/snapshot-server/public/snapshots"
 snapshot_interval_hours: 4
-log_file: "path/to/public/snapshot_service.log"
+log_file: "/home/ubuntu/snapshot-server/public/snapshot_service.log"
 server_port: 8080
+
 ```
 
 ## Usage 
