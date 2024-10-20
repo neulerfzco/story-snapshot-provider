@@ -22,26 +22,25 @@ A Go-based service for creating and managing blockchain snapshots from Geth (Eth
 make snapshot-creator 
 make file-server
 ```
+
 3. **Create `config.yaml` **:
-```yaml
-#execution config
+```bash
+cat <<EOL > config.yaml
 geth_rpc_url: "http://localhost:8545"
 geth_client_name: "geth"
 geth_service_name: "geth.service"
-geth_data_dir: "/home/ubuntu/.story/geth/iliad/geth/chaindata"
-#consensus config
+geth_data_dir: "$HOME/.story/geth/iliad/geth/chaindata"
 cosmos_rpc_url: "http://localhost:26657/status"
 cosmos_client_name: "story"
 cosmos_service_name: "story.service"
-cosmos_data_dir: "/home/ubuntu/.story/story/data"
-#snapshot config
+cosmos_data_dir: "$HOME/.story/story/data"
 geth_snapshot_type: "pruned"
 cosmos_snapshot_type: "pruned"
-snapshot_dir: "/home/ubuntu/snapshot-server/public/snapshots"
+snapshot_dir: "$PWD/public/snapshots"
 snapshot_interval_hours: 4
-log_file: "/home/ubuntu/snapshot-server/public/snapshot_service.log"
+log_file: "$PWD/public/snapshot_service.log"
 server_port: 8080
-
+EOL
 ```
 
 ## Usage 
